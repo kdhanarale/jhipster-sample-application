@@ -1,0 +1,29 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "visit": {
+      "home": {
+        "title": "Visits",
+        "createLabel": "Create a new Visit",
+        "createOrEditLabel": "Create or edit a Visit",
+        "notFound": "No Visits found"
+      },
+      "created": "A new Visit is created with identifier {{ param }}",
+      "updated": "A Visit is updated with identifier {{ param }}",
+      "deleted": "A Visit is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Visit {{ id }}?"
+      },
+      "detail": {
+        "title": "Visit"
+      },
+      "diagnosis": "Diagnosis",
+      "prescription": "Prescription",
+      "clinicalHistory": "Clinical History",
+      "postalCode": "Postal Code",
+      "city": "City",
+      "state": "State",
+      "createdDate": "Created Date",
+      "visit": "Visit"
+    }
+  }
+}

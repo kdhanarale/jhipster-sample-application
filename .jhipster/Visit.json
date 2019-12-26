@@ -1,0 +1,54 @@
+{
+    "name": "Visit",
+    "fields": [
+        {
+            "fieldName": "diagnosis",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "clinicalHistory",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "postalCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "state",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "patient",
+            "otherEntityRelationshipName": "patientVisit",
+            "relationshipName": "visit",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191226132009",
+    "javadoc": "not an ignored comment",
+    "entityTableName": "visit",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "tulip"
+}
