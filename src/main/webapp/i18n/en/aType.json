@@ -1,0 +1,10 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "AType": {
+      "null": "",
+      "VISIT": "VISIT",
+      "PATIENT": "PATIENT",
+      "DOCTOR": "DOCTOR"
+    }
+  }
+}

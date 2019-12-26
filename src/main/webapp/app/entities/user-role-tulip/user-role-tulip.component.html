@@ -1,0 +1,63 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.userRole.home.title">User Roles</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-user-role-tulip" [routerLink]="['/user-role-tulip/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jhipsterSampleApplicationApp.userRole.home.createLabel">
+            Create a new User Role
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="userRoles?.length === 0">
+        <span jhiTranslate="jhipsterSampleApplicationApp.userRole.home.notFound">No userRoles found</span>
+    </div>
+    <div class="table-responsive" *ngIf="userRoles?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.userRole.type">Type</span></th>
+            <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.userRole.firstName">First Name</span></th>
+            <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.userRole.lastName">Last Name</span></th>
+            <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.userRole.createdBy">Created By</span></th>
+            <th scope="col" ><span jhiTranslate="jhipsterSampleApplicationApp.userRole.createdDate">Created Date</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let userRole of userRoles ;trackBy: trackId">
+                <td><a [routerLink]="['/user-role-tulip', userRole.id, 'view' ]">{{userRole.id}}</a></td>
+                <td jhiTranslate="{{'jhipsterSampleApplicationApp.UserType.' + userRole.type}}">{{userRole.type}}</td>
+                <td>{{userRole.firstName}}</td>
+                <td>{{userRole.lastName}}</td>
+                <td>{{userRole.createdBy}}</td>
+                <td>{{userRole.createdDate | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/user-role-tulip', userRole.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/user-role-tulip', userRole.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(userRole)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

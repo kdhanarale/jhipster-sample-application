@@ -1,0 +1,82 @@
+entity UserRole {
+	id Long,
+    type UserType,
+    firstName String,
+    lastName String,
+	createdBy String,
+    createdDate Instant
+}
+
+entity Patient {
+	id Long,
+    firstName String,
+    lastName String,
+ 	gender String,
+    phone String,
+    address String,
+    city String,
+    pincode String,
+    createdBy String,
+    createdDate Instant
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Visit {
+	id Long,
+    scheduleDate Instant,
+    status ScheduleStatus,
+    createdDate Instant
+}
+
+entity VisitDetails {
+	id Long,
+    type VisitInfo,
+    data String,
+    createdDate Instant
+}
+
+entity Attachment {
+	id Long,
+    type AType,
+	name String,
+    data Blob,
+	createdDate Instant
+}
+
+enum UserType {
+	PHYSICIAN, ADMIN, FRONTDESK
+}
+
+enum ScheduleStatus {
+ 	REQUESTED, CONFIRMED, CANCELLED
+ }
+enum AType{
+VISIT, PATIENT, DOCTOR
+}
+enum VisitInfo {
+ DIAGNOSIS, PRESCRIPTION, CLINICALHISTORY, LABREPORTS
+}
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Patient{patientVisit} to Visit{visit},
+    Visit {visit} to VisitDetails{visitDetails},
+    Visit {visitAttachment} to Attachment{vAttachment},
+	Patient{patientAttachment} to Attachment{pAttachment},
+    UserRole{user} to Patient{patient}
+}
+
+
+
+// Set pagination options
+paginate Patient, Visit with infinite-scroll
+paginate Attachment with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+angularSuffix * with tulip

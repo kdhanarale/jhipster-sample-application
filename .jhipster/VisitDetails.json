@@ -1,0 +1,38 @@
+{
+    "name": "VisitDetails",
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "VisitInfo",
+            "fieldValues": "DIAGNOSIS,PRESCRIPTION,CLINICALHISTORY,LABREPORTS"
+        },
+        {
+            "fieldName": "data",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "visit",
+            "otherEntityRelationshipName": "visit",
+            "relationshipName": "visitDetails",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191226143654",
+    "entityTableName": "visit_details",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "tulip"
+}

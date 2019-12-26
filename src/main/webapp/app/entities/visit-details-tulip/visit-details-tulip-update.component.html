@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-visit-details-tulip-heading" jhiTranslate="jhipsterSampleApplicationApp.visitDetails.home.createOrEditLabel">Create or edit a Visit Details</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.visitDetails.type" for="field_type">Type</label>
+                    <select class="form-control" name="type" formControlName="type" id="field_type">
+                        <option value="DIAGNOSIS">{{'jhipsterSampleApplicationApp.VisitInfo.DIAGNOSIS' | translate}}</option>
+                        <option value="PRESCRIPTION">{{'jhipsterSampleApplicationApp.VisitInfo.PRESCRIPTION' | translate}}</option>
+                        <option value="CLINICALHISTORY">{{'jhipsterSampleApplicationApp.VisitInfo.CLINICALHISTORY' | translate}}</option>
+                        <option value="LABREPORTS">{{'jhipsterSampleApplicationApp.VisitInfo.LABREPORTS' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.visitDetails.data" for="field_data">Data</label>
+                    <input type="text" class="form-control" name="data" id="field_data"
+                           formControlName="data"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.visitDetails.createdDate" for="field_createdDate">Created Date</label>
+                    <div class="d-flex">
+                        <input id="field_createdDate" type="datetime-local" class="form-control" name="createdDate" formControlName="createdDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterSampleApplicationApp.visitDetails.visitDetails" for="field_visitDetails">Visit Details</label>
+                    <select class="form-control" id="field_visitDetails" name="visitDetails" formControlName="visitDetails">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="visitOption.id === editForm.get('visitDetails')!.value?.id ? editForm.get('visitDetails')!.value : visitOption" *ngFor="let visitOption of visits; trackBy: trackById">{{visitOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

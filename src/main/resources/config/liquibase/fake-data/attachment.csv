@@ -1,0 +1,11 @@
+id;type;name;data;data_content_type;created_date
+1;PATIENT;Sri Lanka;../fake-data/blob/hipster.png;image/png;2019-12-26T02:53:21
+2;PATIENT;European Unit of Account 17(E.U.A.-17);../fake-data/blob/hipster.png;image/png;2019-12-26T02:57:24
+3;DOCTOR;Credit Card Account;../fake-data/blob/hipster.png;image/png;2019-12-26T05:30:55
+4;PATIENT;reinvent;../fake-data/blob/hipster.png;image/png;2019-12-25T17:26:00
+5;VISIT;United Arab Emirates Tuvalu Quality;../fake-data/blob/hipster.png;image/png;2019-12-25T22:33:03
+6;VISIT;back-end withdrawal;../fake-data/blob/hipster.png;image/png;2019-12-26T04:30:37
+7;VISIT;withdrawal;../fake-data/blob/hipster.png;image/png;2019-12-26T09:20:17
+8;PATIENT;navigate Lead GB;../fake-data/blob/hipster.png;image/png;2019-12-25T19:55:07
+9;DOCTOR;Concrete;../fake-data/blob/hipster.png;image/png;2019-12-26T05:26:54
+10;PATIENT;AI Liaison;../fake-data/blob/hipster.png;image/png;2019-12-26T03:07:37

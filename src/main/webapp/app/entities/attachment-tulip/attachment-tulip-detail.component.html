@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="attachment">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.attachment.detail.title">Attachment</span> {{attachment.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.attachment.type">Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'jhipsterSampleApplicationApp.AType.' + attachment.type}}">{{attachment.type}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.attachment.name">Name</span></dt>
+                <dd>
+                    <span>{{attachment.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.attachment.data">Data</span></dt>
+                <dd>
+                    <div *ngIf="attachment.data">
+                        <a (click)="openFile(attachment.dataContentType!, attachment.data)" jhiTranslate="entity.action.open">open</a>
+                        {{attachment.dataContentType}}, {{byteSize(attachment.data)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.attachment.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{attachment.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.attachment.vAttachment">V Attachment</span></dt>
+                <dd>
+                    <div *ngIf="attachment.vAttachment">
+                        <a [routerLink]="['/visit-tulip', attachment.vAttachment?.id, 'view']">{{attachment.vAttachment?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.attachment.pAttachment">P Attachment</span></dt>
+                <dd>
+                    <div *ngIf="attachment.pAttachment">
+                        <a [routerLink]="['/patient-tulip', attachment.pAttachment?.id, 'view']">{{attachment.pAttachment?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/attachment-tulip', attachment.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

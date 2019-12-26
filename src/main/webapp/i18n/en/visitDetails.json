@@ -1,0 +1,25 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "visitDetails": {
+      "home": {
+        "title": "Visit Details",
+        "createLabel": "Create a new Visit Details",
+        "createOrEditLabel": "Create or edit a Visit Details",
+        "notFound": "No Visit Details found"
+      },
+      "created": "A new Visit Details is created with identifier {{ param }}",
+      "updated": "A Visit Details is updated with identifier {{ param }}",
+      "deleted": "A Visit Details is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Visit Details {{ id }}?"
+      },
+      "detail": {
+        "title": "Visit Details"
+      },
+      "type": "Type",
+      "data": "Data",
+      "createdDate": "Created Date",
+      "visitDetails": "Visit Details"
+    }
+  }
+}

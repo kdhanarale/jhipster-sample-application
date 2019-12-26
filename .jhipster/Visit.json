@@ -1,0 +1,51 @@
+{
+    "name": "Visit",
+    "fields": [
+        {
+            "fieldName": "scheduleDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "ScheduleStatus",
+            "fieldValues": "REQUESTED,CONFIRMED,CANCELLED"
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "visitDetails",
+            "otherEntityRelationshipName": "visitDetails",
+            "relationshipName": "visit"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "attachment",
+            "otherEntityRelationshipName": "vAttachment",
+            "relationshipName": "visitAttachment"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "patient",
+            "otherEntityRelationshipName": "patientVisit",
+            "relationshipName": "visit",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191226143653",
+    "javadoc": "not an ignored comment",
+    "entityTableName": "visit",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "tulip"
+}

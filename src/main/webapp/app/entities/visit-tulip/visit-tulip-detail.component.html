@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="visit">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.visit.detail.title">Visit</span> {{visit.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.visit.scheduleDate">Schedule Date</span></dt>
+                <dd>
+                    <span>{{visit.scheduleDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.visit.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'jhipsterSampleApplicationApp.ScheduleStatus.' + visit.status}}">{{visit.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.visit.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{visit.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.visit.visit">Visit</span></dt>
+                <dd>
+                    <div *ngIf="visit.visit">
+                        <a [routerLink]="['/patient-tulip', visit.visit?.id, 'view']">{{visit.visit?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/visit-tulip', visit.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+{
+    "name": "Attachment",
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "AType",
+            "fieldValues": "VISIT,PATIENT,DOCTOR"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "data",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "visit",
+            "otherEntityRelationshipName": "visitAttachment",
+            "relationshipName": "vAttachment",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "patient",
+            "otherEntityRelationshipName": "patientAttachment",
+            "relationshipName": "pAttachment",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191226143655",
+    "entityTableName": "attachment",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "tulip"
+}

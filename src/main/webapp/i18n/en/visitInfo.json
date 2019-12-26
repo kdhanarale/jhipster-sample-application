@@ -1,0 +1,11 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "VisitInfo": {
+      "null": "",
+      "DIAGNOSIS": "DIAGNOSIS",
+      "PRESCRIPTION": "PRESCRIPTION",
+      "CLINICALHISTORY": "CLINICALHISTORY",
+      "LABREPORTS": "LABREPORTS"
+    }
+  }
+}
