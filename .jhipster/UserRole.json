@@ -1,0 +1,45 @@
+{
+    "name": "UserRole",
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "UserType",
+            "fieldValues": "PHYSICIAN,ADMIN,FRONTDESK"
+        },
+        {
+            "fieldName": "firstName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "patient",
+            "otherEntityRelationshipName": "patient",
+            "relationshipName": "user"
+        }
+    ],
+    "changelogDate": "20191226143651",
+    "entityTableName": "user_role",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "tulip"
+}

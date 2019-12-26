@@ -1,0 +1,10 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "ScheduleStatus": {
+      "null": "",
+      "REQUESTED": "REQUESTED",
+      "CONFIRMED": "CONFIRMED",
+      "CANCELLED": "CANCELLED"
+    }
+  }
+}

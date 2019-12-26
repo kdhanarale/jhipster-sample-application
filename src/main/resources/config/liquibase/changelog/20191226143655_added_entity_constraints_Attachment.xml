@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Attachment.
+    -->
+    <changeSet id="20191226143655-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="v_attachment_id"
+                                 baseTableName="attachment"
+                                 constraintName="fk_attachment_v_attachment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="visit"/>
+
+        <addForeignKeyConstraint baseColumnNames="p_attachment_id"
+                                 baseTableName="attachment"
+                                 constraintName="fk_attachment_p_attachment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="patient"/>
+
+    </changeSet>
+</databaseChangeLog>

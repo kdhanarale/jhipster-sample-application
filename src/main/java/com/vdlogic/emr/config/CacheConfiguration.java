@@ -42,6 +42,16 @@ public class CacheConfiguration {
             createCache(cm, com.vdlogic.emr.domain.User.class.getName());
             createCache(cm, com.vdlogic.emr.domain.Authority.class.getName());
             createCache(cm, com.vdlogic.emr.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.vdlogic.emr.domain.UserRole.class.getName());
+            createCache(cm, com.vdlogic.emr.domain.UserRole.class.getName() + ".users");
+            createCache(cm, com.vdlogic.emr.domain.Patient.class.getName());
+            createCache(cm, com.vdlogic.emr.domain.Patient.class.getName() + ".patientVisits");
+            createCache(cm, com.vdlogic.emr.domain.Patient.class.getName() + ".patientAttachments");
+            createCache(cm, com.vdlogic.emr.domain.Visit.class.getName());
+            createCache(cm, com.vdlogic.emr.domain.Visit.class.getName() + ".visits");
+            createCache(cm, com.vdlogic.emr.domain.Visit.class.getName() + ".visitAttachments");
+            createCache(cm, com.vdlogic.emr.domain.VisitDetails.class.getName());
+            createCache(cm, com.vdlogic.emr.domain.Attachment.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

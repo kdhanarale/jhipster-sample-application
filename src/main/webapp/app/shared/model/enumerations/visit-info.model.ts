@@ -1,0 +1,6 @@
+export const enum VisitInfo {
+  DIAGNOSIS,
+  PRESCRIPTION,
+  CLINICALHISTORY,
+  LABREPORTS
+}
