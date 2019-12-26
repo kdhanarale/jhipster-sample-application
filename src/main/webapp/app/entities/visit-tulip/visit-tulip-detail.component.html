@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="visit">
+            <h2><span jhiTranslate="jhipsterSampleApplicationApp.visit.detail.title">Visit</span> {{visit.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.visit.diagnosis">Diagnosis</span></dt>
+                <dd>
+                    <span>{{visit.diagnosis}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.visit.prescription">Prescription</span></dt>
+                <dd>
+                    <span>{{visit.prescription}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.visit.clinicalHistory">Clinical History</span></dt>
+                <dd>
+                    <span>{{visit.clinicalHistory}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.visit.postalCode">Postal Code</span></dt>
+                <dd>
+                    <span>{{visit.postalCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.visit.city">City</span></dt>
+                <dd>
+                    <span>{{visit.city}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.visit.state">State</span></dt>
+                <dd>
+                    <span>{{visit.state}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.visit.createdDate">Created Date</span></dt>
+                <dd>
+                    <span>{{visit.createdDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterSampleApplicationApp.visit.visit">Visit</span></dt>
+                <dd>
+                    <div *ngIf="visit.visit">
+                        <a [routerLink]="['/patient-tulip', visit.visit?.id, 'view']">{{visit.visit?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/visit-tulip', visit.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

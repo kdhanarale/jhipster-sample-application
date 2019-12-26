@@ -1,0 +1,10 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "UserType": {
+      "null": "",
+      "PHYSICIAN": "PHYSICIAN",
+      "ADMIN": "ADMIN",
+      "FRONTDESK": "FRONTDESK"
+    }
+  }
+}
